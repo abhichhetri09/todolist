@@ -35,7 +35,7 @@ function App() {
   const columns = [
     { headerName: 'Date', field: 'date',sortable: true, filter: true, floatingFilter: true },
     { headerName: 'Description', field: 'description',sortable: true, filter: true, floatingFilter: true },
-    { headerName: 'Priority', field: 'priority' ,sortable: true, filter: true, floatingFilter: true,cellStyle: params => params.value === "High" ? {color: 'red'} : {color: 'black'}},
+    { headerName: 'Priority', field: 'priority' ,sortable: true, filter: true, floatingFilter: true,cellStyle: params => params.value === "High"|| params.value === "high" ? {color: 'red'} : {color: 'black'}},
   ]
 
   return (
