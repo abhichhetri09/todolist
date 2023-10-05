@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+h1{
+  color:rgb(255, 255, 255);
+  background: #1d2024;
+  text-align:center;
+}
