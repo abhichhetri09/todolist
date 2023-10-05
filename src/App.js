@@ -14,8 +14,13 @@ function App() {
   }
 
   const addTodo = (event) => {
+    const newTodo = { ...todo, id: Date.now() }; 
     event.preventDefault();
-    setTodos([...todos, todo]);
+    setTodos([...todos, newTodo]);
+    if (todo.description.trim() === '' && todo.priority.trim() === '' && todo.date.trim() === '') {
+      alert('Please fill in at least one field.');
+      return; // Prevent adding a blank todo
+    }
   }
   const deleteTodo = () => {
     if (gridRef.current.getSelectedNodes().length > 0) {
@@ -45,7 +50,7 @@ function App() {
       <div
         className="ag-theme-material"
         style={{
-          height: '250px',
+          height: '800px',
           width: '50%',
           margin: 'auto'
         }}>
