@@ -1,16 +1,20 @@
-import React from "react";
-
-function TodoTable({ todos, handleDelete }) {
+function Todotable (props) {
   return (
-    <ul>
-      {todos.map((item, index) => (
-        <li key={index}>
-          Description: {item.description}, Date: {item.date}
-          <button onClick={() => handleDelete(index)}>Delete</button>
-        </li>
-      ))}
-    </ul>
-  );
+      <table>
+          <tbody>
+              {
+                  props.todos.map((todo, index) => 
+                      <tr key ={index}>
+                          <td>{todo.description}</td>
+                          <td>{todo.priority}</td>
+                          <td>{todo.date}</td>
+                          <td><button onClick ={() => props.deleteTodo(index)}>Delete</button></td>
+                      </tr>
+                      )
+              }
+          </tbody>
+      </table>
+  )
 }
 
-export default TodoTable;
+export default Todotable;
