@@ -14,17 +14,14 @@ import { DatePicker } from '@mui/x-date-pickers';
 function Todolist() {
   const [todo, setTodo] = useState({ date: '', description: '', priority: '' });
   const [todos, setTodos] = useState([]);
-  const [value, setValue] = useState('one');
+
   const gridRef = useRef();
 
   const inputChanged = (event) => {
     setTodo({ ...todo, [event.target.name]: event.target.value });
   };
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+ 
   const handleDateChange = (date) => {
     setTodo({ ...todo, date: date.toISOString() });
   };
